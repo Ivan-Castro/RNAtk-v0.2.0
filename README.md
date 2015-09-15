@@ -27,6 +27,7 @@ Python dependences
 Other dependences
 * Varna (http://varna.lri.fr/)
 * muscle (http://www.drive5.com/muscle/)
+* RNAview (http://ndbserver.rutgers.edu/)
 
 Legal disclaimer
 
