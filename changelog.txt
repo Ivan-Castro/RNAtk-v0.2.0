@@ -1,0 +1,21 @@
+RNAtk v0.2.0:
+The function adjusted_structure_entropy was added to the module rnatk.structure2D
+
+The function equLen (from rnatk.stats) now admit several parameters (generalized
+length comparison)
+
+The function entropy was added to rnatk.seq and rnatk.stats
+
+The function entropy now admmit several parameters (generalized joint entropy)
+
+The funcitons MIxy and MIxyz were added to rnatk.stats
+
+The functions info_content_pos and info_content_file (from submodule fasta) now
+enable ignore characters to calculate the entropy of the sequence or alignment
+
+The submodule mult_mut_info was created under rnatk.fasta
+
+The submodule pdb was created under main
+
+RNAtk v0.1.0:
+First release.
