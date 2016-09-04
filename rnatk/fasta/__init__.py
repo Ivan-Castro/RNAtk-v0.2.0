@@ -235,31 +235,14 @@ def haplotypes(inFile): # Modify and implement the GetNameSeq function
     """
     if (type(inFile) == str) and (str(type(inFile[0])) != "<class 'Bio.SeqRecord.SeqRecord'>"):
         inFile = openFasta(inFile)
-    groups = {}
-    a = 0
-    while a < len(inFile):
-        memory = []
-        remove = []
-        seq = str(inFile[a].seq)
-        for b in inFile:
-            if seq == str(b.seq):
-                memory.append(b.description)
-                remove.append(b)
-        groups[seq]=memory
-        for a in remove:
-            inFile.remove(a)
-        a =+ 1
-    for a in groups:
-        nameList = groups.values()
-        seqList =  groups.keys()
-    for a in range(len(nameList)):
-        if len(nameList[a]) == 1:
-            nameList[a] = nameList[a][0]
+    items = {}
+    for elem in inFile:
+        if not elem.seq.tostring() in items:
+            items[elem.seq.tostring()] = elem.name
         else:
-            name = ''
-            for b in nameList[a]: # should apply here >>> name = ' '.join(nameList)
-                name += ' '+b
-            nameList[a] = name.strip(' ')
+            items[elem.seq.tostring()] += ', '+elem.name
+    seqList = items.keys()
+    nameList = items.values()
     return nameList, seqList
 
 def noHaploSeqs(inFile):
